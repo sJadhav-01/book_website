@@ -1,0 +1,98 @@
+/* Global Styles */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6; /* Improved default line height for readability */
+  }
+  
+  a {
+    text-decoration: none;
+    color: #0078d7; /* Default link color */
+  }
+  
+  a:hover {
+    color: #0056b3; /* Darker shade on hover */
+  }
+  
+  /* Header and Navigation */
+  nav {
+    background-color: #333;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between; /* Space out elements */
+    align-items: center; /* Vertically center items */
+    color: white;
+    flex-wrap: wrap; /* Make it wrap on smaller screens */
+  }
+  
+  nav #logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 20px; /* Add some space after the logo */
+  }
+  
+  .Search-bar {
+    display: flex;
+    margin-right: 20px;
+    flex-grow: 1; /* Allow search bar to grow and take up available space */
+    max-width: 400px; /* Limit the maximum width of the search bar */
+  }
+  
+  .Search-bar input {
+    padding: 8px;
+    border: none;
+    border-radius: 5px 0 0 5px; /* Rounded left corners */
+    flex-grow: 1; /* Input field expands */
+  }
+  
+  .Search-bar button {
+    padding: 8px 12px;
+    border: none;
+    background-color: #0078d7;
+    color: white;
+    border-radius: 0 5px 5px 0; /* Rounded right corners */
+    cursor: pointer;
+  }
+  
+  .Search-bar button:hover {
+    background-color: #0056b3;
+  }
+  
+  nav a {
+    color: white;
+    margin: 0 10px;
+  }
+  
+  nav a:hover {
+    color: #ddd;
+  }
+
+
+  .book-item {
+    background-color: white;
+    padding: 15px;
+    margin: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 300px; /* Give each book item a fixed width */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
+    transition: transform 0.2s ease-in-out; /* Smooth transition on hover */
+  }
+  
+  .book-item:hover {
+    transform: translateY(-5px); /* Move item up slightly on hover */
+  }
+  
+  .book-item strong {
+    font-size: 1.2em;
+    color: #2c3e50; /* Darker color for the book name */
+  }
+  
+  .book-item p{
+    margin-bottom: 5px;
+  }
+  

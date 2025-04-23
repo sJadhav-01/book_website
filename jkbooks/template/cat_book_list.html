@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+    <!-- <link rel="stylesheet" href="/jkbooks/static/home.css"> -->
+</head>
+<body>
+    <nav>
+       <a href="{% url 'home' %}" id="logo">Books.in</a>
+        
+        <div class="Search-bar">
+            <form method="post" action="{% url 'search' %}">
+            {% csrf_token %}
+            <input type="text" placeholder="Search" name="search_key">
+            <button type="submit">Search</button>
+            </form>
+        </div>
+        
+        <a href="{% url 'login' %}">Accounts</a>
+        <a href="">My cart</a>
+    </nav>
+
+    <h3>Category :  {{ key }}</h3>
+        <div class="new_arrival_list">
+       
+        {% for book in category_book_list %}
+        <a href="">
+            <div class="book-item">      
+                <strong>Name: {{ book.2 }}</strong>
+                <br>
+                Author: {{ book.6 }}
+                <br>
+                Publisher: {{ book.7 }}
+                <br>   
+            </div>
+        </a>
+            {% empty %}
+                <p>No items available.</p>
+            {% endfor %}
+        </div>

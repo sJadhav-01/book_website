@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>search-result</title>
+    <link rel="stylesheet" href="{% static 'search_result.css' %}">
+    <!-- <link rel="stylesheet" href="/jkbooks/static/search_result.css"> -->
+</head>
+<body>
+
+    <nav>
+        <a href="{% url 'home' %}" id="logo">Books.in</a>
+                 
+        <div class="Search-bar">
+            <form method="post" action="{% url 'search' %}">
+            {% csrf_token %}
+            <input type="text" placeholder="Search" name="search_key">
+            <button type="submit">Search</button>
+            </form>
+        </div>
+
+         <a href="{% url 'login' %}">Accounts</a>
+         <a href="">My cart</a>
+     </nav>
+ 
+    <main>
+        <div>
+            {% for book in search_result %}
+            <div class="book-item">      
+                <strong>Name: {{ book.2 }}</strong>
+                <br>
+                Author: {{ book.6 }}
+                <br>
+                Publisher: {{ book.7 }}
+                <br>   
+            </div>           
+            {% endfor %}
+        </div>
+    </main>
+</body>
+</html>

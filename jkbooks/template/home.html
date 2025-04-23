@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+    <!-- <link rel="stylesheet" href="/jkbooks/static/home.css"> -->
+</head>
+<body>
+    <nav>
+       <a href="{% url 'home' %}" id="logo">Books.in</a>
+        
+        <div class="Search-bar">
+            <form method="post" action="{% url 'search' %}">
+            {% csrf_token %}
+            <input type="text" placeholder="Search" name="search_key">
+            <button type="submit">Search</button>
+            </form>
+        </div>
+        
+        <a href="{% url 'login' %}">Accounts</a>
+        <a href="">My cart</a>
+    </nav>
+
+    <main>
+        <div>
+            <img src="" alt="">
+        </div>
+    
+       
+        <h3>New arrivals</h3>
+        <div class="new_arrival_list">
+        {% for book in book_data|slice:":6" %}
+        <a href="">
+            <div class="book-item"> 
+                <img src="/jkbooks/static/{{ book.2 }}.jpg">
+
+                <img src="{% static '{{ book.2}}.jpg' %}" alt="{{ book.2 }}">
+                <img src="{% static 'A Game of Thrones.jpg' %}" alt="{{ book.2 }}">
+                <strong>Name: {{ book.2 }}</strong>
+                <br>
+                Category: {{ book.3 }} 
+                <br>
+                Author: {{ book.6 }}
+                <br>
+                Publisher: {{ book.7 }}
+                <br>   
+            </div>
+        </a>
+            {% empty %}
+                <p>No items available.</p>
+            {% endfor %}
+        </div>
+        <h3>Popular</h3>
+        <div>
+        </div>
+
+        <h3>Category</h3>
+        <div class="category">
+            <form method="post" action="{% url 'cat_book_list' %}" >
+                {% csrf_token %}
+                    {% for category in category_data %}               
+                        <button style="border: None; background-color: #f4f4f4;" type="submit" name="category_key" value="{{ category.0 }}">
+                            <div class="book-item">
+                                <strong>Category : {{ category.0 }}</strong>
+                            </div>
+                        </button>
+                    {% endfor %} 
+            </form>             
+        </div> 
+    </main>
+</body>
+</html>

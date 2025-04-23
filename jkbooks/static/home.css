@@ -1,0 +1,215 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(3, 56, 155);
+    color: rgb(242, 213, 175);
+}
+
+nav {
+    height: 3rem;
+    background-color: rgb(69, 67, 67);
+    display: flex;
+    justify-content:space-between;
+    justify-items: center;
+    flex-direction: row;
+    padding: 1rem;
+    text-align: center;
+    size: 1rem;
+}
+
+nav div .search-bar {
+  size: 70%;
+  padding: 5px;
+  border-radius: 2px;
+}
+
+
+header {
+  height: 100px;
+  background-color: brown;
+}
+
+.new_arrival {
+  display: flex;
+  justify-content: space-evenly;
+  height: 100px;
+  background-color: bisque;
+}
+
+.new_arrival_list {
+  display: flex;
+  justify-content:center;
+  justify-items: center;
+  height: 100px;
+  width: 100px;
+  background-color: rgb(208, 124, 21);
+  border-radius: 1rem;
+
+} */
+
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6; /* Improved default line height for readability */
+}
+
+a {
+  text-decoration: none;
+  color: #0078d7; /* Default link color */
+}
+
+a:hover {
+  color: #0056b3; /* Darker shade on hover */
+}
+
+/* Header and Navigation */
+nav {
+  background-color: #333;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between; /* Space out elements */
+  align-items: center; /* Vertically center items */
+  color: white;
+  flex-wrap: wrap; /* Make it wrap on smaller screens */
+}
+
+nav #logo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: 20px; /* Add some space after the logo */
+}
+
+.Search-bar {
+  display: flex;
+  margin-right: 20px;
+  flex-grow: 1; /* Allow search bar to grow and take up available space */
+  max-width: 400px; /* Limit the maximum width of the search bar */
+}
+
+.Search-bar input {
+  padding: 8px;
+  border: none;
+  border-radius: 5px 0 0 5px; /* Rounded left corners */
+  flex-grow: 1; /* Input field expands */
+}
+
+.Search-bar button {
+  padding: 8px 12px;
+  border: none;
+  background-color: #0078d7;
+  color: white;
+  border-radius: 0 5px 5px 0; /* Rounded right corners */
+  cursor: pointer;
+}
+
+.Search-bar button:hover {
+  background-color: #0056b3;
+}
+
+nav a {
+  color: white;
+  margin: 0 10px;
+}
+
+nav a:hover {
+  color: #ddd;
+}
+/* Main Content */
+main {
+  padding: 20px;
+  max-width: 1200px; /* Added a max-width for the main content */
+  margin: 0 auto; /* Center the main content */
+}
+
+main img {
+  max-width: 100%; /* Ensure images don't overflow their container */
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.new_arrival_list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* Distribute items evenly */
+  margin-bottom: 20px;
+}
+
+.book-item {
+  background-color: white;
+  padding: 15px;
+  margin: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 300px; /* Give each book item a fixed width */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
+  transition: transform 0.2s ease-in-out; /* Smooth transition on hover */
+}
+
+.book-item:hover {
+  transform: translateY(-5px); /* Move item up slightly on hover */
+}
+
+.book-item strong {
+  font-size: 1.2em;
+  color: #2c3e50; /* Darker color for the book name */
+}
+
+.book-item p{
+  margin-bottom: 5px;
+}
+
+.book-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  /* max-height: 250px;  Optional:  Limit image height, use object-fit */
+  object-fit: contain; /* Important:  Maintain aspect ratio, fit within box */
+}
+
+/* Responsive adjustments (Media Queries) */
+@media (max-width: 768px) {
+  /* Smaller screen (tablets, small laptops) */
+  nav {
+      flex-direction: column; /* Stack nav items vertically */
+      text-align: center;
+  }
+  .Search-bar {
+      margin: 10px 0; /* Add margin above and below search bar on smaller screens */
+      width: 100%;
+      max-width: none;
+  }
+  .Search-bar input,
+  .Search-bar button{
+      width: 100%; /* Make input and button full width on small screens */
+      border-radius: 0; /* Remove border radius for full width */
+  }
+  .Search-bar button{
+      margin-top: 5px; /* Add space between input and button when stacked */
+  }
+  .book-item {
+      width: 90%; /* Make book items wider on smaller screens */
+      margin: 10px auto; /* Center items and add vertical margin */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Very small screens (phones) */
+  .book-item {
+      width: 100%; /* Full width on very small screens */
+  }
+  nav a{
+      margin: 5px 0; /* Adjust margin for stacked links in nav*/
+  }
+}
+
+
+.category {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* Distribute items evenly */
+  margin-bottom: 20px;
+}
